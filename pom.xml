@@ -7,6 +7,6 @@
       <groupId>com.httpbin.application1</groupId>  
       <artifactId>my-app</artifactId>  
       <version>1</version>
-      <packaging>jar</packaging>  	  
+      <packaging>httpbin.jar</packaging>  	  
       
     </project>  
