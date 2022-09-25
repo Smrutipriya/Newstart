@@ -15,7 +15,7 @@ WORKDIR /usr/sbin/httpbin
 RUN /bin/bash -c "pip3 install --no-cache-dir -r <(pipenv lock -r)"
 
 ADD . /httpbin
-RUN pip3 install --no-cache-dir /var/lib/jenkins/httpbin
+RUN pip3 install --no-cache-dir /httpbin
 
 EXPOSE 80
 
