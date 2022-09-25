@@ -10,13 +10,13 @@ ENV LANG=C.UTF-8
 
 RUN apt update -y && apt install python3-pip git -y && pip3 install --no-cache-dir pipenv
 
-ADD Pipfile Pipfile.lock /var/lib/jenkins/httpbin/
-WORKDIR /var/lib/jenkins/httpbin
+ADD Pipfile Pipfile.lock /httpbin/
+WORKDIR /usr/sbin/httpbin
 RUN /bin/bash -c "pip3 install --no-cache-dir -r <(pipenv lock -r)"
 
-ADD . /var/lib/jenkins/httpbin
+ADD . /httpbin
 RUN pip3 install --no-cache-dir /var/lib/jenkins/httpbin
 
 EXPOSE 80
 
-CMD ["gunicorn", "-b", "0.0.0.0:80", "httpbin:app", "-k", "gevent"]
+CMD ["/gunicorn", "-b", "0.0.0.0:80", "httpbin:app", "-k", "gevent"]
