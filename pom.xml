@@ -11,5 +11,5 @@
       <packaging>jar</packaging>  
       
       <name>httpbin</name>  
-      <url>http://maven.apache.org</url>  
+        
     </project>  
