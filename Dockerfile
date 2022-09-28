@@ -14,7 +14,7 @@ ADD Pipfile Pipfile.lock /httpbin/
 WORKDIR /usr/local/ubuntu/httpbin
 RUN /bin/bash -c "pip3 install --no-cache-dir -r <(pipenv lock -r)"
 
-ADD . target/httpbin-2.0.jar usr/local/ubuntu/httpbin/
+ADD . usr/local/ubuntu/httpbin/
 RUN pip3 install --no-cache-dir /httpbin
 
 EXPOSE 80
